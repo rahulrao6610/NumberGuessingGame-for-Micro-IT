@@ -1,0 +1,116 @@
+/* Body background and centering */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f0f4f8, #d9e4f5);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main game container */
+.container {
+  background: #ffffff;
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Instruction text */
+p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+/* Input field */
+input[type='number'] {
+  padding: 12px 15px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 100%;
+  margin-top: 20px;
+  box-sizing: border-box;
+  transition: border 0.3s ease;
+}
+
+input[type='number']:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Submit and Restart buttons */
+button {
+  margin-top: 20px;
+  padding: 12px 25px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background-color: #28a745;
+  color: white;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #218838;
+}
+
+.restart-button {
+  background-color: #007bff;
+}
+
+.restart-button:hover {
+  background-color: #0056b3;
+}
+
+/* Feedback messages */
+.result-message.success {
+  color: #28a745;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.result-message.error {
+  color: #dc3545;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Shake effect for incorrect guesses */
+.shake {
+  animation: shake 0.3s;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-8px); }
+  50% { transform: translateX(8px); }
+  75% { transform: translateX(-8px); }
+  100% { transform: translateX(0); }
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
