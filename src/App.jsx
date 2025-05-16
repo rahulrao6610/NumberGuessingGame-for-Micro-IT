@@ -41,6 +41,7 @@ function App() {
   const getMessageClass = () => {
     if (message.includes('Correct')) return 'success';
     if (message.includes('Too')) return 'error';
+    if (message.includes('lost')) return 'error';
     return '';
   };
 
@@ -67,7 +68,6 @@ function App() {
       <div className={`result-message ${getMessageClass()}`}>{message}</div>
       <p>Attempts left: {attempts}</p>
 
-      {/* Restart button appears only when game ends */}
       {(attempts <= 0 || showConfetti) && (
         <button className="restart-button" onClick={restartGame}>
           🔁 Restart Game
@@ -75,13 +75,6 @@ function App() {
       )}
     </div>
   );
-  return (
-  <div className="container">
-    <h1>Number Guessing Game</h1>
-    <p>Guess a number between 1 and 100</p>
-    {/* ...rest of your component... */}
-  </div>
-);
 }
 
 export default App;
